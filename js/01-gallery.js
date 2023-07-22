@@ -25,7 +25,8 @@ galleryImages.insertAdjacentHTML("beforeend", markup);
 
 function onClickOpenLargeImg(event) {
   event.preventDefault();
-  if (!event.target) {
+
+  if (event.target.nodeName !== "IMG") {
     return;
   }
   instance = basicLightbox.create(
